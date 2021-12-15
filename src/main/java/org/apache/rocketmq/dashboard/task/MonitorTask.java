@@ -37,12 +37,13 @@ public class MonitorTask {
     @Resource
     private ConsumerService consumerService;
 
-//    @Scheduled(cron = "* * * * * ?")
+    @Scheduled(cron = "0 */2 * * * ?")
     public void scanProblemConsumeGroup() {
         for (Map.Entry<String, ConsumerMonitorConfig> configEntry : monitorService.queryConsumerMonitorConfig().entrySet()) {
             GroupConsumeInfo consumeInfo = consumerService.queryGroup(configEntry.getKey());
             if (consumeInfo.getCount() < configEntry.getValue().getMinCount() || consumeInfo.getDiffTotal() > configEntry.getValue().getMaxDiffTotal()) {
                 logger.info("op=look consumeInfo {}", JsonUtil.obj2String(consumeInfo)); // notify the alert system
+                // 钉钉
             }
         }
     }
