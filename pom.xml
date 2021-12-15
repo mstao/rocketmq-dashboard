@@ -247,6 +247,12 @@
             <version>${asm.version}</version>
         </dependency>
 
+        <!-- 钉钉 -->
+        <dependency>
+            <groupId>taotaoSdk</groupId>
+            <artifactId>dingding</artifactId>
+            <version>1.0.0</version>
+        </dependency>
     </dependencies>
     <build>
         <plugins>
