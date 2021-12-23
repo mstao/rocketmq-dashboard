@@ -69,3 +69,9 @@ We are always very happy to have contributions, whether for trivial cleanups or 
 
 ## License
 [Apache License, Version 2.0](http://www.apache.org/licenses/LICENSE-2.0.html) Copyright (C) Apache Software Foundation
+
+
+## 添加改动
+
+1. 放开报警配置模块
+2. 在启动命令上添加 `--dingding.token=xxxxx` 来指定报警的机器人配置token
